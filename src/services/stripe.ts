@@ -1,5 +1,4 @@
 import Stripe from 'stripe';
-import { loadStripe } from '@stripe/stripe-js';
 import packageJson from '../../package.json';
 
 export const stripe = new Stripe(
@@ -12,8 +11,3 @@ export const stripe = new Stripe(
     }
   }
 );
-
-export async function getStripeJs() {
-  const stripeJs = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
-  return stripeJs;
-}
